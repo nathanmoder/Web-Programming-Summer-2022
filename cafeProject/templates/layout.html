@@ -8,10 +8,20 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+
+<style>
+.tc1{
+ color:#1a090d
+}
+.tc2{
+  color:#4a314d
+}
+
+</style>
 <body>
 
 
-  <div class="row" style="background-color: #f0d069;">
+  <div class="row tc1" style="background-color: #f0d069;">
   </div>
     <div class="row" style="background-color: #f0d069;">
         <div class="col-sm-4"><h1>Maple Wings Cafe</h1></div>
@@ -27,7 +37,7 @@
     </div>
     <div class="row">
       <div class="col-sm-2 container" style="background-color: #db44a1">          
-        <table class="table table-hover">
+        <table class="table table-hover tc1">
           <thead>
             <tr>
               <th>Menu</th>
@@ -52,7 +62,7 @@
           </tbody>
         </table>
       </div>
-      <div class="col-sm-10" style="background-color: #c1dbe3">
+      <div class="col-sm-10 tc2" style="background-color: #c1dbe3">
       {% block content %}
       {% endblock %}
       </div>
