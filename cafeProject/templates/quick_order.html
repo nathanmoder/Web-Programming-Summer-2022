@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <h3>Your Items:</h3>
+    <table class="table table-responsive">
+        <tr>
+            <th>Item</th>
+            <th>Size</th>
+            <th>Calories</th>
+            <th>Price</th>
+            <th>Add to order</th>
+        </tr>
+        {%if drink!="no drink"%}
+        <tr>
+            <td>{{drink['id']}}</td>
+            <td>{{drink['size']}}</td>
+            <td>{{drink['cal']}}</td>
+            <td>{{drink['price']}}</td>
+            <td><a href="/remove_drink" class="btn btn-primary">Remove</a></td>
+        </tr>
+        {%endif%}
+        {%if food!="no food"%}
+        <td>{{food['id']}}</td>
+            <td>{{food['size']}}</td>
+            <td>{{food['cal']}}</td>
+            <td>{{food['price']}}</td>
+            <td><a href="/remove_food" class="btn btn-primary">Remove</a></td>
+        </tr>
+        {%endif%}
+    </table>
+    <form action="/order" method="post">
+        <input type="submit" value="Place order!" onclick="alert('Thank you for your order!')">
+    </form>
+    {%if name!="no name"%}
+        <h4>Previously Ordered Items:</h4>
+        <table class="table table-responsive">
+            <tr>
+                <th>Item</th>
+                <th>Size</th>
+                <th>Calories</th>
+                <th>Price</th>
+                <th>Add to order</th>
+            </tr>
+            {%for entry in previous_items%}
+            <tr>
+                <td>{{entry['id']}}</td>
+                <td>{{entry['size']}}</td>
+                <td>{{entry['cal']}}</td>
+                <td>{{entry['price']}}</td>
+                <td><a href="/add_to_order/{{entry['_id']}}" class="btn btn-primary">Add</a></td>
+            </tr>
+        
+        
+            {%endfor%}
+        </table>
+    {%endif%}
+
+{%endblock%}

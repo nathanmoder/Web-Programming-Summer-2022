@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+<table class="table table-responsive">
+    <tr>
+        <th>Item</th>
+        <th>Size</th>
+        <th>Calories</th>
+        <th>Price</th>
+        <th>Add to order</th>
+    </tr>
+    {%for entry in menu_items%}
+    <tr>
+        <td>{{entry['id']}}</td>
+        <td>{{entry['size']}}</td>
+        <td>{{entry['cal']}}</td>
+        <td>{{entry['price']}}</td>
+        <td><a href="/add_to_order/{{entry['_id']}}" class="btn btn-primary">Add</a></td>
+    </tr>
+
+
+    {%endfor%}
+</table>
+{%endblock%}

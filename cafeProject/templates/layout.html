@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Maple Wings Cafe</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+  <div class="row" style="background-color: #f0d069;">
+  </div>
+    <div class="row" style="background-color: #f0d069;">
+        <div class="col-sm-4"><h1>Maple Wings Cafe</h1></div>
+        <div class="col-sm-3"><h2><a href="/order">Manage Order</a></h2></div>
+        <div class="col-sm-3"><h2>About</h2></div>
+        <div class="col-sm-2"><h3>
+          {% if name!="no user" %}
+          Welcome, {{name}}. <a href="/logout">Logout</a>
+          {% else %}
+          <a href="/login">Login</a> | <a href="/register">Register</a>
+          {% endif %}
+        </h3></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2 container" style="background-color: #db44a1">          
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Menu</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="/menu">All</a></td>
+            </tr>
+            <tr>
+              <td>Drinks</td>
+            </tr>
+            <tr>
+              <td>Bakery</td>
+            </tr>
+            <tr>
+              <td>Teas</td>
+            </tr>
+            <tr>
+              <td>Coffees</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-sm-10" style="background-color: #c1dbe3">
+      {% block content %}
+      {% endblock %}
+      </div>
+    </div>
+
+
+
+    
+    
+
+</body>
+</html>
